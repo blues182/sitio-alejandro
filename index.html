@@ -4,7 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Alejandro Cisneros: software a la medida para pequeñas y medianas empresas en Puebla. Proyectos, experiencia y contacto.">
-<title>Alejandro Cisneros</title>
+<title>Alejandro Cisneros · Software para tu negocio</title>
+<meta property="og:title" content="Alejandro Cisneros · Software para tu negocio">
+<meta property="og:description" content="Software a la medida para pequeñas y medianas empresas en Puebla. Conoce proyectos en uso y platiquemos del tuyo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alejandro.cisnexa.com/">
+<link rel="canonical" href="https://alejandro.cisnexa.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -150,17 +155,50 @@ footer { font-size: 0.85rem; color: var(--muted); }
   .slot .state { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .seg7 i { transition: none; } }
+/* Proyectos con contexto de negocio */
+.wrap { max-width: 56rem; }
+header { max-width: 46rem; }
+.eyebrow { text-transform: none; letter-spacing: 0; font-family: var(--font-body); font-size: .95rem; }
+h1 { max-width: 15ch; }
+h2 { text-transform: none; letter-spacing: 0; font-family: var(--font-display); font-size: 1.3rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 18px; border-radius: 8px; background: var(--accent); color: var(--bg); font-weight: 600; text-decoration: none; }
+.button.secondary { background: var(--accent-soft); color: var(--accent); }
+.section-intro { max-width: 65ch; color: var(--muted); }
+.case { padding: 28px 0; border-bottom: 1px solid var(--line); display: grid; gap: 18px; }
+.case:first-of-type { padding-top: 4px; }
+.case h3 { font-size: 1.7rem; }
+.case .summary { font-size: 1.15rem; max-width: 65ch; }
+.case-body { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; }
+.case-copy { display: grid; gap: 16px; }
+.case-copy h4 { margin: 0 0 4px; font-size: 1rem; }
+.case-copy p { color: var(--muted); }
+.use { border-left: 3px solid var(--accent); padding: 16px 20px; background: var(--surface); align-self: start; display: grid; gap: 10px; }
+.use strong { font-family: var(--font-display); font-size: 1.2rem; }
+details { font-size: .95rem; }
+summary { cursor: pointer; color: var(--accent); padding-block: 8px; }
+details p { margin-top: 8px; color: var(--muted); max-width: 65ch; }
+.process { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding-left: 20px; margin: 0; }
+.process li { padding-left: 4px; }
+.process strong { display: block; }
+.process p { color: var(--muted); font-size: .95rem; }
+.copy { min-height: 32px; }
+.skip { position: absolute; left: 20px; top: -100px; background: var(--surface); padding: 10px; }
+.skip:focus { top: 10px; }
+@media(max-width: 600px) { .case-body, .process { grid-template-columns: 1fr; } .case { padding-block: 24px; } .cta { padding: 22px; } }
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<a class="skip" href="#h-proyectos">Ir a los proyectos</a>
+<main class="wrap">
   <header>
-    <span class="eyebrow">Ingeniero en Sistemas Computacionales en formación · Puebla, México</span>
-    <h1>Alejandro Luis Cisneros Bernal</h1>
-    <p class="lede">Construyo <strong>software a la medida para pequeñas y medianas empresas</strong>: desde la base de datos hasta la puesta en producción. Fundador de Cisnexa Software y estudiante de 7.º semestre en la UDLAP.</p>
+    <span class="eyebrow">Alejandro Cisneros · Puebla, México</span>
+    <h1>Software para llevar mejor tu negocio.</h1>
+    <p class="lede">Soy Alejandro Luis Cisneros Bernal, fundador de <strong>Cisnexa Software</strong>. Construyo sistemas a la medida para pequeñas y medianas empresas: inventarios, ventas, transporte y reportes, desde los requerimientos hasta la puesta en producción.</p>
+    <div class="actions"><a class="button" href="mailto:aleclahs88@gmail.com?subject=Platiquemos%20de%20mi%20proyecto">Platiquemos de tu proyecto</a><a class="button secondary" href="#h-proyectos">Conoce mi trabajo</a></div>
     <div class="contact">
-      <span class="email"><code id="email">aleclahs88@gmail.com</code><button class="copy" id="copy-email" type="button">Copiar</button></span>
+      <span class="email"><a href="mailto:aleclahs88@gmail.com" id="email">aleclahs88@gmail.com</a><button class="copy" id="copy-email" type="button">Copiar</button></span>
       <a href="https://github.com/blues182">GitHub</a>
       <a href="https://www.linkedin.com/in/alejandro-cisneros-6aab61368">LinkedIn</a>
     </div>
@@ -169,25 +207,30 @@ footer { font-size: 0.85rem; color: var(--muted); }
   <section aria-labelledby="h-proyectos">
     <h2 id="h-proyectos">Proyectos y experiencia</h2>
 
-    <article class="item">
-      <div class="item-head"><h3>Cisnexa Software</h3><span class="when">2026 – hoy</span></div>
-      <p class="role">Fundador y desarrollador</p>
-      <ul>
-        <li>App a medida para <strong>Carolina Valenzuela</strong>, marca de cuidado de la piel en Puebla: inventarios, clientes, proveedores, compras, ventas, producción y eventos. En producción desde septiembre de 2026.</li>
-        <li>Levanté los requerimientos, la cotización y un plan técnico por etapas con pruebas de aceptación para cada entrega. Incluye hosting y soporte mensual.</li>
-        <li>Inventario modelado como libro de movimientos, usuarios con permisos por rol, tablero de indicadores y exportación a CSV.</li>
-      </ul>
+    <p class="section-intro">Sistemas que ya se usan en negocios reales. Estos son los problemas que ayudan a resolver y el trabajo que hice en cada uno.</p>
+    <article class="case">
+      <div class="item-head"><h3>Carolina Valenzuela</h3><span class="when">Cisnexa Software · 2026</span></div>
+      <p class="summary">Una aplicación para reunir la operación de una marca de cuidado de la piel en Puebla.</p>
+      <div class="case-body">
+        <div class="case-copy">
+          <div><h4>La necesidad</h4><p>Llevar el control de inventarios, clientes, proveedores, compras, ventas, producción y eventos.</p></div>
+          <div><h4>Mi trabajo</h4><p>Levanté los requerimientos y preparé una cotización y un plan por etapas, con pruebas de aceptación para cada entrega. Desarrollé la aplicación e incluí hosting y soporte mensual.</p></div>
+        </div>
+        <aside class="use"><strong>En producción desde septiembre de 2026</strong><p>La aplicación reúne los módulos de operación, un tablero de indicadores y exportaciones a CSV.</p></aside>
+      </div>
+      <details><summary>Detalles de implementación</summary><p>Inventario modelado como libro de movimientos y usuarios con permisos por rol.</p></details>
     </article>
-
-    <article class="item">
-      <div class="item-head"><h3>Cibertransportes</h3><span class="when">2026 – hoy</span></div>
-      <p class="role">SaaS de gestión de flotas · proyecto propio</p>
-      <ul>
-        <li>Sistema web para empresas de transporte: viajes, cobros, inventario, alertas de vencimiento y reportes en Excel y PDF.</li>
-        <li>Se usa todos los días con datos reales en la empresa de transporte de mi familia (5–6 unidades).</li>
-        <li>Autenticación en las 31 rutas de la API, validación de datos con Zod, roles, modo oscuro y pruebas automatizadas con Vitest.</li>
-      </ul>
-      <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Prisma</span><span>PostgreSQL</span><span>Vercel</span></div>
+    <article class="case">
+      <div class="item-head"><h3>Cibertransportes</h3><span class="when">Proyecto propio · 2026 – hoy</span></div>
+      <p class="summary">Un sistema web para organizar viajes, cobros y pendientes de una empresa de transporte.</p>
+      <div class="case-body">
+        <div class="case-copy">
+          <div><h4>La necesidad</h4><p>Dar seguimiento a viajes y cobros, consultar inventario y tener presentes los vencimientos.</p></div>
+          <div><h4>La solución</h4><p>Desarrollé un sistema de gestión de flotas con alertas y reportes exportables a Excel y PDF.</p></div>
+        </div>
+        <aside class="use"><strong>En uso diario con datos reales</strong><p>Se utiliza en la empresa de transporte de mi familia, que opera entre 5 y 6 unidades.</p></aside>
+      </div>
+      <details><summary>Detalles de implementación</summary><p>Next.js, TypeScript, Prisma y PostgreSQL, desplegado en Vercel. Autenticación en las 31 rutas de la API, validación con Zod, roles y pruebas automatizadas con Vitest.</p></details>
     </article>
 
     <article class="item">
@@ -222,6 +265,15 @@ footer { font-size: 0.85rem; color: var(--muted); }
     </article>
   </section>
 
+  <section aria-labelledby="h-proceso">
+    <h2 id="h-proceso">Cómo trabajo contigo</h2>
+    <ol class="process">
+      <li><strong>Entender la operación</strong><p>Platicamos sobre tu proceso y lo que necesitas resolver.</p></li>
+      <li><strong>Definir las entregas</strong><p>Preparo los requerimientos, la cotización y un plan de trabajo por etapas.</p></li>
+      <li><strong>Probar y poner en marcha</strong><p>Revisamos cada entrega con pruebas de aceptación y acordamos el hosting y el soporte.</p></li>
+    </ol>
+  </section>
+
   <section aria-labelledby="h-educacion">
     <h2 id="h-educacion">Educación</h2>
     <article class="item">
@@ -245,12 +297,14 @@ footer { font-size: 0.85rem; color: var(--muted); }
 
   <section class="cta" aria-labelledby="h-contacto">
     <h2 id="h-contacto">Contacto</h2>
-    <p class="big">¿Tu negocio lleva el control en Excel o en libretas? Platiquemos.</p>
-    <p>Escríbeme a <code id="email2">aleclahs88@gmail.com</code> <button class="copy" id="copy-email2" type="button">Copiar</button> o mándame mensaje por <a href="https://www.linkedin.com/in/alejandro-cisneros-6aab61368">LinkedIn</a>.</p>
+    <p class="big">Cuéntame qué necesitas resolver en tu negocio.</p>
+    <p>¿Qué proceso te toma más tiempo? ¿Qué información necesitas tener a la mano? Ese es un buen punto de partida.</p>
+    <div class="actions"><a class="button" href="mailto:aleclahs88@gmail.com?subject=Platiquemos%20de%20mi%20proyecto">Escríbeme sobre tu proyecto</a></div>
+    <p>Escríbeme a <a href="mailto:aleclahs88@gmail.com" id="email2">aleclahs88@gmail.com</a> <button class="copy" id="copy-email2" type="button">Copiar</button> o mándame mensaje por <a href="https://www.linkedin.com/in/alejandro-cisneros-6aab61368">LinkedIn</a>.</p>
   </section>
 
   <footer>Alejandro Luis Cisneros Bernal · Cisnexa Software · Puebla, México</footer>
-</div>
+</main>
 
 <script>
 (function () {
