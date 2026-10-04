@@ -186,6 +186,12 @@ details p { margin-top: 8px; color: var(--muted); max-width: 65ch; }
 .skip { position: absolute; left: 20px; top: -100px; background: var(--surface); padding: 10px; }
 .skip:focus { top: 10px; }
 @media(max-width: 600px) { .case-body, .process { grid-template-columns: 1fr; } .case { padding-block: 24px; } .cta { padding: 22px; } }
+figure.project-preview { margin: 8px 0 0; }
+.project-preview img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); }
+.project-preview figcaption { margin-top: 10px; color: var(--muted); font-size: .9rem; }
+.project-preview a { display: block; }
+.preview-secondary { margin-top: 8px; }
+.preview-secondary img { display: block; width: 100%; height: auto; margin-top: 10px; border-radius: 8px; }
 </style>
 </head>
 <body>
@@ -218,6 +224,11 @@ details p { margin-top: 8px; color: var(--muted); max-width: 65ch; }
         </div>
         <aside class="use"><strong>En producción desde septiembre de 2026</strong><p>La aplicación reúne los módulos de operación, un tablero de indicadores y exportaciones a CSV.</p></aside>
       </div>
+      <figure class="project-preview">
+        <a href="assets/carolina-dashboard.jpg" target="_blank" rel="noopener" aria-label="Abrir captura del tablero de Carolina en tamaño completo"><img src="assets/carolina-dashboard.jpg" width="1440" height="1100" loading="lazy" alt="Tablero de Carolina Valenzuela con resumen de ventas, margen y gráficos diarios en modo oscuro."></a>
+        <figcaption>Tablero de ventas y márgenes. Captura de la versión de desarrollo con datos de prueba; las cifras no representan resultados del negocio.</figcaption>
+      </figure>
+      <details class="preview-secondary"><summary>Ver el control de inventario</summary><img src="assets/carolina-inventario.jpg" width="1440" height="500" loading="lazy" alt="Inventario de prueba con pestañas para productos, materias primas y regalos; muestra existencias, mínimos, precios y movimientos."><p>La misma aplicación, con datos de prueba: existencias y mínimos por artículo, búsqueda y registro de movimientos.</p></details>
       <details><summary>Detalles de implementación</summary><p>Inventario modelado como libro de movimientos y usuarios con permisos por rol.</p></details>
     </article>
     <article class="case">
