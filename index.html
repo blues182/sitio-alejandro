@@ -10,6 +10,9 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://alejandro.cisnexa.com/">
 <link rel="canonical" href="https://alejandro.cisnexa.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f4e79'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%23f5f7fa' text-anchor='middle'%3EAC%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#f5f7fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d141d" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -61,19 +64,16 @@ body {
   padding-inline: 20px;
   padding-block: 48px 64px;
 }
-.wrap { max-width: 46rem; margin: 0 auto; display: grid; gap: 56px; }
+.wrap { max-width: 56rem; margin: 0 auto; display: grid; gap: 56px; }
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
 p { margin: 0; }
 a { color: var(--accent); text-underline-offset: 3px; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
 /* Encabezado */
-header { display: grid; gap: 18px; }
-.eyebrow {
-  font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--muted);
-}
-h1 { font-size: clamp(2.4rem, 7vw, 3.6rem); line-height: 1.02; font-weight: 700; letter-spacing: -0.02em; }
+header { display: grid; gap: 18px; max-width: 46rem; }
+.eyebrow { font-size: .95rem; color: var(--muted); }
+h1 { font-size: clamp(2.4rem, 7vw, 3.6rem); line-height: 1.02; font-weight: 700; letter-spacing: -0.02em; max-width: 15ch; }
 .lede { font-size: 1.2rem; color: var(--muted); max-width: 36rem; }
 .lede strong { color: var(--ink); font-weight: 600; }
 .contact { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; font-size: 0.95rem; }
@@ -88,8 +88,7 @@ h1 { font-size: clamp(2.4rem, 7vw, 3.6rem); line-height: 1.02; font-weight: 700;
 /* Secciones */
 section { display: grid; gap: 22px; }
 h2 {
-  font-size: 0.85rem; font-family: var(--font-mono); font-weight: 500;
-  letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
+  font-size: 1.3rem; font-weight: 700; color: var(--accent);
   padding-bottom: 10px; border-bottom: 1px solid var(--line);
 }
 .item { display: grid; gap: 8px; }
@@ -156,14 +155,13 @@ footer { font-size: 0.85rem; color: var(--muted); }
 }
 @media (prefers-reduced-motion: reduce) { .seg7 i { transition: none; } }
 /* Proyectos con contexto de negocio */
-.wrap { max-width: 56rem; }
-header { max-width: 46rem; }
-.eyebrow { text-transform: none; letter-spacing: 0; font-family: var(--font-body); font-size: .95rem; }
-h1 { max-width: 15ch; }
-h2 { text-transform: none; letter-spacing: 0; font-family: var(--font-display); font-size: 1.3rem; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 18px; border-radius: 8px; background: var(--accent); color: var(--bg); font-weight: 600; text-decoration: none; }
 .button.secondary { background: var(--accent-soft); color: var(--accent); }
+.button.whatsapp { background: #1f7a4d; color: #fff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .button.whatsapp { background: #25a066; color: #06140d; } }
+:root[data-theme="dark"] .button.whatsapp { background: #25a066; color: #06140d; }
+.examples { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 .section-intro { max-width: 65ch; color: var(--muted); }
 .case { padding: 28px 0; border-bottom: 1px solid var(--line); display: grid; gap: 18px; }
 .case:first-of-type { padding-top: 4px; }
@@ -201,8 +199,8 @@ figure.project-preview { margin: 8px 0 0; }
   <header>
     <span class="eyebrow">Alejandro Cisneros · Puebla, México</span>
     <h1>Software para llevar mejor tu negocio.</h1>
-    <p class="lede">Soy Alejandro Luis Cisneros Bernal, fundador de <strong>Cisnexa Software</strong>. Construyo sistemas a la medida para pequeñas y medianas empresas: inventarios, ventas, transporte y reportes, desde los requerimientos hasta la puesta en producción.</p>
-    <div class="actions"><a class="button" href="mailto:aleclahs88@gmail.com?subject=Platiquemos%20de%20mi%20proyecto">Platiquemos de tu proyecto</a><a class="button secondary" href="#h-proyectos">Conoce mi trabajo</a></div>
+    <p class="lede">Soy Alejandro Luis Cisneros Bernal, fundador de <a href="https://www.cisnexa.com/"><strong>Cisnexa Software</strong></a>. Construyo sistemas a la medida para pequeñas y medianas empresas: inventarios, ventas, transporte y reportes, desde los requerimientos hasta la puesta en producción.</p>
+    <div class="actions"><a class="button whatsapp" href="https://wa.me/522223743184?text=Hola%20Alejandro%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20platicar%20de%20un%20proyecto." target="_blank" rel="noopener">Escríbeme por WhatsApp</a><a class="button" href="mailto:aleclahs88@gmail.com?subject=Platiquemos%20de%20mi%20proyecto">Platiquemos por correo</a><a class="button secondary" href="#h-proyectos">Conoce mi trabajo</a></div>
     <div class="contact">
       <span class="email"><a href="mailto:aleclahs88@gmail.com" id="email">aleclahs88@gmail.com</a><button class="copy" id="copy-email" type="button">Copiar</button></span>
       <a href="https://github.com/blues182">GitHub</a>
@@ -232,16 +230,23 @@ figure.project-preview { margin: 8px 0 0; }
       <details><summary>Detalles de implementación</summary><p>Inventario modelado como libro de movimientos y usuarios con permisos por rol.</p></details>
     </article>
     <article class="case">
-      <div class="item-head"><h3>Cibertransportes</h3><span class="when">Proyecto propio · 2026 – hoy</span></div>
-      <p class="summary">Un sistema web para organizar viajes, cobros y pendientes de una empresa de transporte.</p>
+      <div class="item-head"><h3>Cibertransportes</h3><span class="when">Empresa familiar · 2026 – hoy</span></div>
+      <p class="summary">Un sistema de control de costos y mantenimiento para saber qué unidad deja dinero y cuál se lo está comiendo.</p>
       <div class="case-body">
         <div class="case-copy">
-          <div><h4>La necesidad</h4><p>Dar seguimiento a viajes y cobros, consultar inventario y tener presentes los vencimientos.</p></div>
-          <div><h4>La solución</h4><p>Desarrollé un sistema de gestión de flotas con alertas y reportes exportables a Excel y PDF.</p></div>
+          <div><h4>La necesidad</h4><p>Saber cuánto cuesta de verdad traer rodando cada tracto (diésel, casetas, sueldos, insumos y mantenimientos) y dejar de reaccionar cuando una unidad ya se paró.</p></div>
+          <div><h4>La solución</h4><p>Desarrollé un sistema que calcula la utilidad por unidad y programa el mantenimiento preventivo por kilometraje y desgaste: balatas, llantas, aceite y engrasado. Incluye reportes exportables a Excel y PDF.</p></div>
         </div>
-        <aside class="use"><strong>En uso diario con datos reales</strong><p>Se utiliza en la empresa de transporte de mi familia, que opera entre 5 y 6 unidades.</p></aside>
+        <aside class="use"><strong>En uso diario con datos reales</strong><p>Lo construí para la empresa de transporte de mi familia, que opera entre 5 y 6 unidades. Ahora saben cada cuánto se acaba una balata y en qué unidad dura más.</p></aside>
       </div>
       <details><summary>Detalles de implementación</summary><p>Next.js, TypeScript, Prisma y PostgreSQL, desplegado en Vercel. Autenticación en las 31 rutas de la API, validación con Zod, roles y pruebas automatizadas con Vitest.</p></details>
+    </article>
+
+    <article class="item">
+      <div class="item-head"><h3>Páginas web para negocios</h3><span class="when">Cisnexa Software · 2026</span></div>
+      <p class="role">Ejemplos de demostración</p>
+      <p>Páginas para que un negocio local aparezca en Google y sus clientes le escriban directo por WhatsApp: servicios, precios, ubicación y horarios. Estos dos ejemplos muestran cómo quedarían:</p>
+      <p class="examples"><a href="https://ejemplos.cisnexa.com/veterinaria/" target="_blank" rel="noopener">Veterinaria →</a><a href="https://ejemplos.cisnexa.com/dental/" target="_blank" rel="noopener">Consultorio dental →</a><a href="https://www.cisnexa.com/">Paquetes y precios en cisnexa.com →</a></p>
     </article>
 
     <article class="item">
@@ -310,11 +315,11 @@ figure.project-preview { margin: 8px 0 0; }
     <h2 id="h-contacto">Contacto</h2>
     <p class="big">Cuéntame qué necesitas resolver en tu negocio.</p>
     <p>¿Qué proceso te toma más tiempo? ¿Qué información necesitas tener a la mano? Ese es un buen punto de partida.</p>
-    <div class="actions"><a class="button" href="mailto:aleclahs88@gmail.com?subject=Platiquemos%20de%20mi%20proyecto">Escríbeme sobre tu proyecto</a></div>
-    <p>Escríbeme a <a href="mailto:aleclahs88@gmail.com" id="email2">aleclahs88@gmail.com</a> <button class="copy" id="copy-email2" type="button">Copiar</button> o mándame mensaje por <a href="https://www.linkedin.com/in/alejandro-cisneros-6aab61368">LinkedIn</a>.</p>
+    <div class="actions"><a class="button whatsapp" href="https://wa.me/522223743184?text=Hola%20Alejandro%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20platicar%20de%20un%20proyecto." target="_blank" rel="noopener">Escríbeme por WhatsApp</a><a class="button" href="mailto:aleclahs88@gmail.com?subject=Platiquemos%20de%20mi%20proyecto">Escríbeme por correo</a></div>
+    <p>También puedes escribirme a <a href="mailto:aleclahs88@gmail.com" id="email2">aleclahs88@gmail.com</a> <button class="copy" id="copy-email2" type="button">Copiar</button> o mandarme mensaje por <a href="https://www.linkedin.com/in/alejandro-cisneros-6aab61368">LinkedIn</a>.</p>
   </section>
 
-  <footer>Alejandro Luis Cisneros Bernal · Cisnexa Software · Puebla, México</footer>
+  <footer>Alejandro Luis Cisneros Bernal · <a href="https://www.cisnexa.com/">Cisnexa Software</a> · Puebla, México</footer>
 </main>
 
 <script>
