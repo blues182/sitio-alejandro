@@ -162,6 +162,14 @@ footer { font-size: 0.85rem; color: var(--muted); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .button.whatsapp { background: #25a066; color: #06140d; } }
 :root[data-theme="dark"] .button.whatsapp { background: #25a066; color: #06140d; }
 .examples { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.case-more { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.case-more h4 { margin: 0 0 8px; font-size: 1rem; }
+.case-more ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; color: var(--muted); font-size: .97rem; }
+.case-more li::marker { color: var(--accent); }
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.timeline li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 12px; color: var(--muted); font-size: .97rem; }
+.timeline time { font-family: var(--font-mono); font-size: .82rem; color: var(--ink); padding-top: 2px; }
+@media (max-width: 600px) { .case-more { grid-template-columns: 1fr; } .timeline li { grid-template-columns: 1fr; gap: 0; } }
 .section-intro { max-width: 65ch; color: var(--muted); }
 .case { padding: 28px 0; border-bottom: 1px solid var(--line); display: grid; gap: 18px; }
 .case:first-of-type { padding-top: 4px; }
@@ -227,7 +235,29 @@ figure.project-preview { margin: 8px 0 0; }
         <figcaption>Tablero de ventas y márgenes. Captura de la versión de desarrollo con datos de prueba; las cifras no representan resultados del negocio.</figcaption>
       </figure>
       <details class="preview-secondary"><summary>Ver el control de inventario</summary><img src="assets/carolina-inventario.jpg" width="1440" height="500" loading="lazy" alt="Inventario de prueba con pestañas para productos, materias primas y regalos; muestra existencias, mínimos, precios y movimientos."><p>La misma aplicación, con datos de prueba: existencias y mínimos por artículo, búsqueda y registro de movimientos.</p></details>
-      <details><summary>Detalles de implementación</summary><p>Inventario modelado como libro de movimientos y usuarios con permisos por rol.</p></details>
+      <div class="case-more">
+        <div>
+          <h4>Lo que incluye</h4>
+          <ul>
+            <li>Tres inventarios separados: productos terminados, materias primas y artículos para regalos o eventos, con alerta cuando algo llega a su mínimo.</li>
+            <li>Compras, órdenes de compra y pagos a proveedores.</li>
+            <li>Ventas, con registro de por dónde llegó cada clienta.</li>
+            <li>Producción: lo que se fabrica descuenta sus materias primas y el costo de cada pieza se calcula solo, incluida la merma.</li>
+            <li>Tres usuarios con permisos distintos; quien no debe ver costos no los ve.</li>
+            <li>Exportación a CSV y PDF.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Cómo cuido la información</h4>
+          <ul>
+            <li>Cada existencia sale de un historial de movimientos, así que siempre se puede explicar de dónde viene un número.</li>
+            <li>Lo que ya se registró no se edita en silencio: se cancela o se corrige dejando rastro.</li>
+            <li>Respaldo automático cada lunes. Además de copiar la base, se restaura en otra y se comprueba que los inventarios cuadren.</li>
+            <li>Más de 80 archivos de pruebas automáticas sobre inventario, costos y permisos.</li>
+          </ul>
+        </div>
+      </div>
+      <details><summary>Detalles de implementación</summary><p>Next.js, React y TypeScript con PostgreSQL (Neon) y Prisma, desplegado en Vercel. Autenticación con Auth.js y permisos por módulo. Las cantidades y los importes se calculan en decimal exacto, nunca con punto flotante. Se entregó por etapas, cada una con sus pruebas de aceptación: primero inventarios, clientes, proveedores y compras; después ventas y producción.</p></details>
     </article>
     <article class="case">
       <div class="item-head"><h3>Cibertransportes</h3><span class="when">Empresa familiar · 2026 – hoy</span></div>
@@ -239,7 +269,28 @@ figure.project-preview { margin: 8px 0 0; }
         </div>
         <aside class="use"><strong>En uso diario con datos reales</strong><p>Lo construí para la empresa de transporte de mi familia, que opera entre 5 y 6 unidades. Ahora saben cada cuánto se acaba una balata y en qué unidad dura más.</p></aside>
       </div>
-      <details><summary>Detalles de implementación</summary><p>Next.js, TypeScript, Prisma y PostgreSQL, desplegado en Vercel. Autenticación en las 31 rutas de la API, validación con Zod, roles y pruebas automatizadas con Vitest.</p></details>
+      <div class="case-more">
+        <div>
+          <h4>Lo que incluye</h4>
+          <ul>
+            <li>Viajes con sus gastos (diésel, casetas, sueldo del operador) y la utilidad de cada uno.</li>
+            <li>Tractos, remolques y operadores.</li>
+            <li>Mantenimiento preventivo por kilometraje e inventario de refacciones e insumos con aviso de stock bajo.</li>
+            <li>Mapa de llantas por unidad: dónde va montada cada una, rotaciones e intercambios.</li>
+            <li>Cotizaciones de flete en PDF con el membrete de la empresa.</li>
+            <li>Tablero con los costos del mes y reportes en Excel y PDF.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Cómo ha crecido</h4>
+          <ol class="timeline">
+            <li><time datetime="2026-08">Agosto 2026</time><span>Revisión técnica completa: validación de todo lo que entra al sistema, permisos más estrictos y pruebas automáticas. Esas pruebas encontraron dos errores que en pantalla no se notaban.</span></li>
+            <li><time datetime="2026-09">Septiembre 2026</time><span>Inventario y mapa de llantas para tractos y remolques, a petición de quienes lo usan.</span></li>
+            <li><time datetime="2026-10">Octubre 2026</time><span>Cotizaciones de flete en PDF, listas para mandar al cliente.</span></li>
+          </ol>
+        </div>
+      </div>
+      <details><summary>Detalles de implementación</summary><p>Next.js, TypeScript, Prisma y PostgreSQL, desplegado en Vercel. Sesión obligatoria y validación con Zod en todas las rutas de la API, roles con permisos que fallan cerrados y pruebas automatizadas con Vitest. Un viaje ya facturado no se puede borrar: se cancela y conserva su historial.</p></details>
     </article>
 
     <article class="item">
